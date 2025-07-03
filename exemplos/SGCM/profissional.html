@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +11,144 @@
     </header>
 
     <nav>
-
+        <ul>
+            <li>
+                <a href="">HOME</a>
+            </li>
+            <li>
+                <a href="">PACIENTE</a>
+            </li>
+            <li>
+                <a href="">ATENDIMENTO</a>
+            </li>
+            <li>
+                <a href="">PROFISSIONAL</a>
+            </li>
+            <li>
+                <a href="">CONVENIO</a>
+            </li>
+            <li>
+                <a href="">UNIDADE</a>
+            </li>
+            <li>
+                <a href="">ESPECIALIDADE</a>
+            </li>
+        </ul>
     </nav>
 
     <main>
+        <form action="">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="seu nome">
+            <br>
+            <label for="registroConselho">Registro Conselho:</label>
+            <input type="text" name="registroConselho" id="registroConselho" placeholder="seu sobrenome" >
+            <br>
+            <label for="telefone">Telefone:</label>
+            <input type="text" name="telefone" id="telefone">
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+            <br>
+            <label for="unidade">Unidade:</label>
+            <select name="unidade" id="unidade">
+                <option value=""></option>
+                <option value="1">Upa - Segundo distrito</option>
+                <option value="2">Upa - CdP</option>
+                <option value="3">Pronto Socorro</option>
+            </select>
+            <br>
+            <label for="especialidade:">Especialidade:</label>
+            <select name="especialidade" id="especialidade">
+                <option value=""></option>
+                <option value="1">Cardiologista</option>
+                <option value="2">Ginecologista</option>
+                <option value="3">Urologista</option>
+                
+            </select>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </form>
+        <table border="1" cellpadding="8" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>REG. CONSELHO</th>
+                    <th>TELEFONE</th>
+                    <th>EMAIL</th>
+                    <th>UNIDADE</th>
+                    <th>ESPECIALIDADE</th>
+                    <th>OPÇÕES</th>
+                </tr>
+            </thead>
+            <!-- tr*5>td{$}+td*6{X}+td{Editar | Excluir} -->
+            <!-- tr*5>td{$}+td*6{X}+td>a[href=""]{Editar}+{|}+a[href=""]{Excluir} -->
+             <tr>
+                <td>1</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td><a href="">Editar</a>|<a href="">Excluir</a></td>
+             </tr>
+             <tr>
+                <td>2</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td><a href="">Editar</a>|<a href="">Excluir</a></td>
+             </tr>
+             <tr>
+                <td>3</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td><a href="">Editar</a>|<a href="">Excluir</a></td>
+             </tr>
+             <tr>
+                <td>4</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td><a href="">Editar</a>|<a href="">Excluir</a></td>
+             </tr>
+             <tr>
+                <td>5</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td><a href="">Editar</a>|<a href="">Excluir</a></td>
+             </tr>
+             <tfoot>
+                <tr>
+                    <td colspan="8">Quantidade de Profs</td>
+                </tr>
+             </tfoot>
 
+             
+            
+        </table>
     </main>
-
+<hr>
     <footer>
+        <p>&copy; WebAcademy - UFAC</p>
+        <p>TEL: (68) 3223-3030 | Email: suporte@sgcm.ufac.br</p>
 
     </footer>
 </body>
