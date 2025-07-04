@@ -59,16 +59,29 @@ main .contatos{
 }
 
 main a{
-    color: #521313;
+    color: #000;
     
+}
+main a:hover{
+    color: #c43030;
+    font-size: 16.4px;
 }
 
 main .link-branco{
     color: #fff;
 }
 
-main .link-branco:hover, a:hover{
+main .link-branco:hover{
     font-weight: 600;
+    color: #fff !important;
+}
+
+.git{
+    color: #521313;
+}
+
+.git:hover{
+     font-weight: 600;
 }
 
 main li{
@@ -164,7 +177,7 @@ footer{
     width: 100%;
     font-size: 13px;
     }
-    
+
     @keyframes steps{
     0%, 10%{
         width: 0%;
@@ -177,6 +190,7 @@ footer{
     }
 
 }
+
 }
 
 
