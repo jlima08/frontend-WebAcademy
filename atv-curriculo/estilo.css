@@ -39,7 +39,7 @@ main{
     padding: 12px;
 }
 
-main h2{
+main h2, h3{
     color: #521313;
     text-align: center;
 }
@@ -56,12 +56,80 @@ main section{
 main .contatos{
     display: flex;
     justify-content: center;
+    gap: 22px;
+    
+}
+
+.contatos form{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #521313;
+    padding: 12px;
+    gap: 8px;
+}
+
+form label{
+    color: #521313;
+    font-weight: 600;
+}
+
+input[type=text]{
+    border-radius: 12px;
+    border: 1px solid #521313;
+    height: 30px;
+    padding: 2px;
+
+}
+
+input[type=submit], input[type=reset]{
+    padding: 3px;
+    border-radius: 6px;
+    border: none;
+    width: 40%;
+    cursor: pointer;
+    transition: all 0.5s;
+    
+}
+
+input[type=text]:focus{
+    background-color: #5213138a;
+    color: #fff;
+    font-weight: 500;
+}
+
+form .enviar{
+    background-color: #521313;
+    color: #fff;
+    
+}
+
+form .limpar{
+    background-color: #969696;
+    color: #fff;
+}
+
+form .enviar:hover{
+    border: 1px solid #521313;
+    background-color: #fff;
+    color: #521313;
+    font-weight: 600;
+    width: 45%;
+}
+
+form .limpar:hover{
+    border: 1px solid #686868;
+    background-color: #fff;
+    color: #6d6d6d;
+    font-weight: 600;
+    width: 45%;
 }
 
 main a{
     color: #000;
     
 }
+
 main a:hover{
     color: #c43030;
     font-size: 16.4px;
@@ -89,10 +157,10 @@ main li{
 }
 
 main table{
-    width: 50%;
+    width: 40%;
     color: #521313;
     /* border-collapse: collapse; */
-    border-bottom: 1px solid #521313;
+    border: 1px solid #521313;
 }
 
 main table .sem-borda{
