@@ -241,6 +241,14 @@ footer{
     width: 100%;
     }
 
+    main .contatos{
+        flex-direction: column;
+    }
+
+    .contatos form{
+        width: 95%;
+    }
+
     .steps{
     width: 100%;
     font-size: 13px;
