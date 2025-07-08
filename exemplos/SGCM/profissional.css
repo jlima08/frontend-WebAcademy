@@ -20,6 +20,7 @@ nav{
     width: 100%;
     background-color: #40abab;
     height: 50px;
+    
 }
 nav ul{
     display: flex;
@@ -52,6 +53,10 @@ thead th, tfoot tr{
 
 }
 
+table{
+    overflow-x: auto;
+}
+
 table tr:nth-child(even){
     background-color: #40abab;
 }
@@ -80,4 +85,32 @@ input[type="reset"], .exc{
     background-color: #701818;
     color: #fff;
     padding: 5px;
+}
+
+footer{
+background: linear-gradient(#2f7e7e, #40abab);
+}
+
+footer p{
+    text-align: center;
+}
+
+@media screen and (max-width:500px) {
+    nav{
+        height: auto;
+    }
+   nav ul{
+    flex-direction: column;
+   }
+   li{
+    text-align: center;
+   }
+
+   form{
+    width: 90%;
+    grid-template-columns: 1fr;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+   }
 }
