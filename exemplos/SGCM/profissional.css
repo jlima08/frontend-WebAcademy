@@ -78,13 +78,15 @@ form{
 input[type="submit"], .edit{
     background-color: #187038;
     color: #fff;
-    padding: 3px;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 input[type="reset"], .exc{
     background-color: #701818;
     color: #fff;
-    padding: 5px;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 footer{
