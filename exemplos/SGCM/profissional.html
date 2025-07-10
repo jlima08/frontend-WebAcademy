@@ -40,6 +40,10 @@
     </nav>
 
     <main>
+        <div class="add">
+            <h3>Deseja adicionar um profissional</h3>
+            <button id="add" onclick="adicionar()" >Adicionar</button>
+        </div>
         <form action="">
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" placeholder="seu nome">
@@ -72,6 +76,7 @@
             
             <input type="submit" id="enviar" value="Enviar">
             <input type="reset" value="Limpar">
+            <input type="button" onclick="closeForm()" value="cancelar">
         </form>
         <table style="overflow-x:auto;" >
             <thead>

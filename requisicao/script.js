@@ -1,3 +1,14 @@
+let abrirForm = document.getElementById('add');
+
+function adicionar(){
+    form.style.display = 'grid'
+
+}
+
+function closeForm(){
+    form.style.display = 'none'
+}
+
 
 function carregarProfissionais(){
     let xhr = new XMLHttpRequest();
@@ -45,17 +56,20 @@ function carregarProfissionais(){
 
 } 
 carregarProfissionais();
-
+let contaID = 6;
+let tabela = document.querySelector('table');
 let form = document.querySelector('form')
 let enviar = document.getElementById('enviar');
-enviar.addEventListener('click', () => {
+enviar.addEventListener('click', (event) => {
+    event.preventDefault(); //evita q a pagina seja recarregada
     let objeto = {
+        id:contaID++,
         nome: form.nome.value,
         registro: form.registroConselho.value,
         telefone:form.telefone.value,
         email: form.email.value,
-        unidade: form.unidade.value,
-        especialidade: form.especialidade.value
+        unidade: form.unidade.options[form.unidade.selectedIndex].label,
+        especialidade: form.especialidade.options[form.especialidade.selectedIndex].label
     }
     inserirProfissional(objeto);
 });
@@ -93,4 +107,7 @@ inserirProfissional = (item) =>{
 
 
 }
-console.log(enviar);
+
+function excluirLinha(){
+    let excluir = document.querySelector
+}
