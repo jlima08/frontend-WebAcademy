@@ -41,56 +41,75 @@
 
     <main>
         <div class="add">
-            <h3>Deseja adicionar um profissional</h3>
+            <h3>Deseja adicionar um profissional?</h3>
             <button id="add" onclick="adicionar()" >Adicionar</button>
         </div>
         <form action="">
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" placeholder="seu nome">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="">
+            </div>
             
-            <label for="registroConselho">Registro Conselho:</label>
-            <input type="text" name="registroConselho" id="registroConselho" placeholder="seu sobrenome" >
+            <div>
+                <label for="registroConselho">Registro Conselho:</label>
+                <input type="text" name="registroConselho" id="registroConselho" >
+            </div>
             
-            <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" id="telefone">
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone">
+            </div>
             
-            <label for="email">Email:</label>
-            <input type="text" name="email" id="email">
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+            </div>
             
-            <label for="unidade">Unidade:</label>
-            <select name="unidade" id="unidade">
-                <option value=""></option>
-                <option value="1">Upa - Segundo distrito</option>
-                <option value="2">Upa - CdP</option>
-                <option value="3">Pronto Socorro</option>
-            </select>
+            <div>
+                <label for="unidade">Unidade:</label>
+                <select name="unidade" id="unidade">
+                    <option value=""></option>
+                    <option value="1">Upa - Segundo distrito</option>
+                    <option value="2">Upa - CdP</option>
+                    <option value="3">Pronto Socorro</option>
+                </select>
+            </div>
             
-            <label for="especialidade:">Especialidade:</label>
-            <select name="especialidade" id="especialidade">
-                <option value=""></option>
-                <option value="1">Cardiologista</option>
-                <option value="2">Ginecologista</option>
-                <option value="3">Urologista</option>
+            <div>
+                <label for="especialidade:">Especialidade:</label>
+                <select name="especialidade" id="especialidade">
+                    <option value=""></option>
+                    <option value="1">Cardiologista</option>
+                    <option value="2">Ginecologista</option>
+                    <option value="3">Urologista</option>
                 
-            </select>
+                </select>
+            </div>
             
-            <input type="submit" id="enviar" value="Enviar">
-            <input type="reset" value="Limpar">
-            <input type="button" onclick="closeForm()" value="cancelar">
+            <div class="btnForm">
+                <input type="submit" id="enviar" value="Enviar">
+                <input type="reset" value="Limpar">
+                <input type="button" id="cancelar" onclick="closeForm()" value="cancelar">
+            </div>
         </form>
-        <table style="overflow-x:auto;" >
+        <table >
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>NOME</th>
-                    <th>REG. CONSELHO</th>
-                    <th>TELEFONE</th>
-                    <th>EMAIL</th>
-                    <th>UNIDADE</th>
+                    <th class="ocultar">REG. CONSELHO</th>
+                    <th class="ocultar">TELEFONE</th>
+                    <th class="ocultar">EMAIL</th>
+                    <th class="ocultar">UNIDADE</th>
                     <th>ESPECIALIDADE</th>
                     <th>OPÇÕES</th>
                 </tr>
             </thead>
+
+            <tbody>
+            
+
+            </tbody>
             <!-- tr*5>td{$}+td*6{X}+td{Editar | Excluir} -->
             <!-- tr*5>td{$}+td*6{X}+td>a[href=""]{Editar}+{|}+a[href=""]{Excluir} -->
              <!-- <tr>
@@ -145,7 +164,7 @@
              </tr> -->
              <tfoot>
                 <tr>
-                    <td colspan="8">Quantidade de Profs</td>
+                    <td colspan="8" id="totalProfissionais">Quantidade de profissionais: 0</td>
                 </tr>
              </tfoot>
 

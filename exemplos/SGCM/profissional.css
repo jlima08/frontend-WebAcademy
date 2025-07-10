@@ -17,6 +17,10 @@ header p{
     letter-spacing: 2px;
 }
 
+main{
+    height: 71vh;
+}
+
 main .add{
     width: 100%;
     display: flex;
@@ -24,7 +28,8 @@ main .add{
     align-items: center;
     flex-direction: column;
     gap: 12px;
-    padding: 16px;
+    margin-top: 50px;
+    
 }
 
 #add{
@@ -34,11 +39,11 @@ main .add{
     color: #fff;
     background-color: #2f7e7e;
     border: #187038;
-    transition: width 0.4s;
+    transition: scale 0.4s;
     cursor: pointer;
 }
 #add:hover{
-    width: 22%;
+    scale: 1.1;
     font-weight: 600;
 }
 nav{
@@ -51,21 +56,26 @@ nav ul{
     display: flex;
     list-style-type: none;
     justify-content: center;
-    
-    
     padding: 12px;
     margin: 0;
+    
+}
+
+nav li{
+    padding: 8px;
+}
+nav li:hover{
+   background-color: #2f7e7e;
 }
 
 nav a{
     color: #fff;
     text-decoration: none;
-    padding: 12px;
     margin: 0;
 }
 
 nav a:hover{
-    background-color: #2f7e7e;
+    
     font-weight: 600;
 }
 
@@ -79,7 +89,9 @@ thead th, tfoot tr{
 }
 
 table{
-    overflow-x: auto;
+    margin-top: 50px;
+    width: 100%;
+    
 }
 
 table tr:nth-child(even){
@@ -95,39 +107,97 @@ table tr:hover{
 
 form{
     display: none;
-    grid-template-columns: 1fr 1fr;
-    width: fit-content;
-    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 40px;
+    gap: 30px;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 4px;
+}
+form div input, select{
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid #2f7e7e;
+    padding: 4px;
+
+}
+form div select{
+    height: 40px;
+}
+
+form .btnForm{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 20px;
 }
 
 input[type="submit"], .edit{
-    background-color: #187038;
+    background-color: #2f7e7e;
     color: #fff;
     padding: 8px;
     border-radius: 5px;
+    width: 165px;
+    border: none;
+    transition: scale 0.4s;
 }
 
-input[type="reset"], .exc{
-    background-color: #701818;
+input[type="reset"] {
+    background-color: #8b8b8b;
     color: #fff;
     padding: 8px;
     border-radius: 5px;
+    width: 165px;
+    border: none;
+    transition: scale 0.4s;
+}
+#cancelar, .excluir{
+    width: 165px;
+    background-color: #701818;
+    padding: 8px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: scale 0.4s;
+}
+
+#cancelar:hover, input[type="submit"]:hover, input[type="reset"]:hover{
+    scale: 1.1;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 footer{
 background: linear-gradient(#2f7e7e, #40abab);
+height: 70px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
 footer p{
     text-align: center;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:550px) {
+    .add{
+        padding: 10px;
+        width: 90%;
+    }
     nav{
         height: auto;
     }
    nav ul{
     flex-direction: column;
+    
    }
    li{
     text-align: center;
@@ -135,9 +205,26 @@ footer p{
 
    form{
     width: 90%;
-    grid-template-columns: 1fr;
+    flex-direction: column;
     padding: 12px;
     justify-content: center;
     align-items: center;
+   }
+   form div{
+    width: 100%;
+   }
+
+   form .btnForm{
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+   }
+
+   .ocultar{
+    display: none;
+   }
+   table{
+    width: 100%;
    }
 }
