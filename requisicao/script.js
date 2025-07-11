@@ -78,6 +78,7 @@ enviar.addEventListener('click', (event) => {
     }
     inserirProfissional(objeto);
     atualizarTotal(); // Atualiza o total de profs no tfoot
+    excluirLinha();
     alert("Profissional cadastrado com suscesso!")
 });
 inserirProfissional = (item) =>{
@@ -103,7 +104,7 @@ inserirProfissional = (item) =>{
             email.textContent = item.email;
             unidade.textContent = item.unidade;
             especialidade.textContent = item.especialidade;
-            opcoes.innerHTML = `<a class="edit" href="">Editar</a>|<a onclick="excluirLinha(" class="excluir" href="">Excluir</a>`
+            opcoes.innerHTML = `<a class="edit" href="">Editar</a>|<a class="excluir" href="">Excluir</a>`
 
             linha.appendChild(id);
             linha.appendChild(nome);
@@ -127,6 +128,7 @@ function excluirLinha() {
     let botoes_excluir = document.querySelectorAll('a.excluir');
     for (let botao of botoes_excluir) {
         botao.addEventListener('click', (event) => {
+            event.preventDefault();
             botao.parentElement.parentElement.remove();
              
             console.log("teste");
