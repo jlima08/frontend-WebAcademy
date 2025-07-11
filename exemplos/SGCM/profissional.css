@@ -168,6 +168,9 @@ input[type="reset"] {
     border-radius: 5px;
     transition: scale 0.4s;
 }
+#editarForm{
+    display: none;
+}
 
 .edit, .excluir{
     color: #fff;

@@ -66,21 +66,44 @@ let tabela = document.querySelector('table tbody');
 let form = document.querySelector('form')
 let enviar = document.getElementById('enviar');
 enviar.addEventListener('click', (event) => {
-    event.preventDefault(); //evita q a pagina seja recarregada
+    event.preventDefault(); // evita recarregar a página
+
     let objeto = {
-        id:contaID++,
+        id: form.dataset.editando ? form.dataset.idOriginal : contaID++,
         nome: form.nome.value,
         registro: form.registroConselho.value,
-        telefone:form.telefone.value,
+        telefone: form.telefone.value,
         email: form.email.value,
         unidade: form.unidade.options[form.unidade.selectedIndex].label,
         especialidade: form.especialidade.options[form.especialidade.selectedIndex].label
     }
-    inserirProfissional(objeto);
-    atualizarTotal(); // Atualiza o total de profs no tfoot
+
+    // Verifica se está editando
+    if (form.dataset.editando) {
+        let index = parseInt(form.dataset.editando);
+        let linha = tabela.rows[index - 1]; // índice da linha (tbody)
+        let colunas = linha.querySelectorAll('td');
+        colunas[0].textContent = objeto.id;
+        colunas[1].textContent = objeto.nome;
+        colunas[2].textContent = objeto.registro;
+        colunas[3].textContent = objeto.telefone;
+        colunas[4].textContent = objeto.email;
+        colunas[5].textContent = objeto.unidade;
+        colunas[6].textContent = objeto.especialidade;
+
+        delete form.dataset.editando;
+        delete form.dataset.idOriginal;
+    } else {
+        inserirProfissional(objeto);
+    }
+
+    atualizarTotal();
     excluirLinha();
-    alert("Profissional cadastrado com suscesso!")
+    editarLinha();
+    alert("Profissional cadastrado com sucesso!");
     form.reset();
+    form.style.display = 'none';
+    abrirForm.style.display = 'block';
 });
 inserirProfissional = (item) =>{
 
@@ -122,6 +145,9 @@ inserirProfissional = (item) =>{
             form.style.display = 'none'
             add.style.display = 'block'
 
+            
+            
+
 
 }
 
@@ -140,6 +166,39 @@ function excluirLinha() {
 }
 
 const atualizarTotal = () => {
-    const totalLinhas = tabela.querySelectorAll('tbody tr').length;
+    const totalLinhas = tabela.querySelectorAll('tr').length;
     totalDisplay.textContent = `Total de profissionais: ${totalLinhas}`;
 };
+
+function editarLinha() {
+    let botoes_editar = document.querySelectorAll('a.edit');
+
+    for (let botao of botoes_editar) {
+        botao.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const linha = botao.closest('tr');
+            const colunas = linha.querySelectorAll('td');
+
+            // Preenche os dados no formulário
+            form.dataset.idOriginal = colunas[0].textContent;
+            form.nome.value = colunas[1].textContent;
+            form.registroConselho.value = colunas[2].textContent;
+            form.telefone.value = colunas[3].textContent;
+            form.email.value = colunas[4].textContent;
+
+            // Preenche selects comparando com o label visível
+            form.unidade.value = [...form.unidade.options].find(opt => opt.label === colunas[5].textContent)?.value;
+            form.especialidade.value = [...form.especialidade.options].find(opt => opt.label === colunas[6].textContent)?.value;
+
+            // Exibe formulário
+            form.style.display = 'flex';
+            abrirForm.style.display = 'none';
+
+            // Guarda a linha a ser editada
+            form.dataset.editando = linha.rowIndex;
+
+            alert("Ao concluir a edição cique em ENVIAR.");
+        });
+    }
+}
