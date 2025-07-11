@@ -80,6 +80,7 @@ enviar.addEventListener('click', (event) => {
     atualizarTotal(); // Atualiza o total de profs no tfoot
     excluirLinha();
     alert("Profissional cadastrado com suscesso!")
+    form.reset();
 });
 inserirProfissional = (item) =>{
 
@@ -96,6 +97,7 @@ inserirProfissional = (item) =>{
             unidade.classList.add('ocultar');
             let especialidade = document.createElement('td');
             let opcoes = document.createElement('td');
+            opcoes.classList.add('opcoes');
 
             id.textContent = item.id;
             nome.textContent = item.nome;
